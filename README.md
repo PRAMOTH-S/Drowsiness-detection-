@@ -7,7 +7,13 @@ This system monitors eye activity using facial landmarks and detects drowsiness 
 
 ## 📌 Overview
 
-Driver fatigue is a significant cause of road accidents. This project provides a **computer vision-based solution** that detects drowsiness in real time using a webcam and alerts the user.
+Driver fatigue is a major cause of road accidents. This project provides a **computer vision-based solution** that detects drowsiness in real time using a webcam and alerts the user.
+
+---
+
+## 🔗 Repository Link
+
+👉 **[View Project on GitHub](https://github.com/PRAMOTH-S/drowsiness-detection)**
 
 ---
 
@@ -24,13 +30,13 @@ Driver fatigue is a significant cause of road accidents. This project provides a
 
 ## 🧠 Methodology
 
-1. Capture live video from webcam  
+1. Capture video from webcam  
 2. Convert frame to grayscale  
 3. Detect face using dlib  
-4. Extract 68 facial landmarks  
-5. Identify left and right eye regions  
-6. Compute Eye Aspect Ratio (EAR)  
-7. Trigger alert if EAR remains below threshold for consecutive frames  
+4. Extract facial landmarks  
+5. Track eye regions  
+6. Calculate EAR  
+7. Trigger alert if EAR stays below threshold  
 
 ---
 
@@ -40,75 +46,53 @@ Driver fatigue is a significant cause of road accidents. This project provides a
 EAR = (||p2 - p6|| + ||p3 - p5||) / (2 × ||p1 - p4||)
 ```
 
-- EAR decreases when eyes close  
-- Continuous low EAR indicates drowsiness  
-
 ---
 
 ## 🛠️ Tech Stack
 
-- **Language:** Python  
-- **Libraries:** OpenCV, dlib, imutils, scipy  
-- **Hardware:** Webcam  
+- **Python**
+- **OpenCV**
+- **dlib**
+- **imutils**
+- **scipy**
 
 ---
 
 ## 📦 Installation
 
-### 1️⃣ Clone the Repository
-
 ```bash
 git clone https://github.com/PRAMOTH-S/drowsiness-detection.git
 cd drowsiness-detection
-```
-
-### 2️⃣ Install Required Libraries
-
-```bash
 pip install opencv-python dlib imutils scipy
 ```
 
 ---
 
-## ⚠️ Important Setup Notes
+## ⚠️ Setup Notes
 
-- Install **Visual C++ Build Tools** before installing `dlib` (Windows)
-- `winsound` is built-in (no installation required)
-- Do NOT install `sklearn` (not used)
+- Install **Visual C++ Build Tools** before installing `dlib`
+- `winsound` is built-in (Windows only)
+- No need for `sklearn`
 
 ---
 
-## 📁 Required Model File
+## 📁 Required File
 
 ```
 shape_predictor_68_face_landmarks.dat
 ```
 
-### 🔽 Instructions
-
-- Place this file in the **same folder as `main.py`**
-- File name must match exactly
+📌 Place this file in the same directory as `main.py`
 
 ---
 
-## 📂 Project Structure
-
-```
-drowsiness-detection/
-│── main.py
-│── shape_predictor_68_face_landmarks.dat
-│── README.md
-```
-
----
-
-## ▶️ Run the Project
+## ▶️ Run
 
 ```bash
 python main.py
 ```
 
-- Press **Q** to exit  
+Press **Q** to exit.
 
 ---
 
@@ -121,37 +105,36 @@ earFrames = 48
 
 ---
 
-## 🔔 Alert Mechanism
+## 🔔 Alert
 
-- Displays: **DROWSINESS DETECTED**  
-- Plays alert sound using `winsound`  
+- On-screen warning: **DROWSINESS DETECTED**
+- Beep sound using system audio
 
 ---
 
 ## ⚠️ Limitations
 
-- Requires good lighting  
-- Needs frontal face  
-- Not for multiple faces  
-- Sound works only on Windows  
+- Needs proper lighting  
+- Requires frontal face  
+- Windows-only sound  
 
 ---
 
-## 🔮 Future Improvements
+## 🔮 Future Scope
 
-- Deep learning-based detection  
+- Deep learning enhancement  
 - Mobile integration  
-- Night vision support  
+- Night-time detection  
 
 ---
 
 ## 👨‍💻 Author
 
 **Pramoth S**  
-https://github.com/PRAMOTH-S  
+🔗 https://github.com/PRAMOTH-S  
 
 ---
 
 ## ⭐ Support
 
-If you found this useful, give it a ⭐ on GitHub!
+If you found this useful, please give it a ⭐ on GitHub!
