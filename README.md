@@ -1,4 +1,4 @@
-# 😴 Driver Drowsiness Detection System
+# 😴 Driver Drowsiness Detection Syste
 
 A real-time **Driver Drowsiness Detection System** built using **Python, OpenCV, and dlib**.  
 This system monitors eye activity using facial landmarks and detects drowsiness based on the **Eye Aspect Ratio (EAR)**. When prolonged eye closure is detected, an alert is triggered.
